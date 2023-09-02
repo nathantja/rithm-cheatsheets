@@ -2,6 +2,8 @@
 # cohort r33
 # UNDER CONSTRUCTION
 
+These docs are meant to provide quick references to limit context switching during development.
+
 Table of Contents:
 
 Object Oriented Programming
