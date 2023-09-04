@@ -1,23 +1,22 @@
-# rithm-cheatsheets
-# cohort r33
 # UNDER CONSTRUCTION
 
-These docs are meant to provide quick references to limit context switching during development.
+## Quick references to limit context switching.
 
 Table of Contents:
 
-Object Oriented Programming
-Big O Notation
+Drafted:
+- Jinja
+- Flask-SQLAlchemy
+- Flask-WTF
+- Postgres
 
-JavaScript
-AJAX
+Pending:
+- Flask
+- Javascript AJAX Requests
+- Python API Requests
 
-Python
-Python API Requests
-
-Flask
-Jinja
-Flask-SQLAlchemy
-Flask-WTF
-
-PostgreSQL
+Considerations:
+- JavaScript
+- Python
+- Object Oriented Programming
+- Big O Notation
