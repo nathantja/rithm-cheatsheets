@@ -9,9 +9,11 @@ Drafted:
 - Postgres
 
 Pending:
+- Python Testing (unittest, doctest)
 - Flask/Flask Session
 - Javascript AJAX Requests
 - Python API Requests
+- Jasmine Testing
 
 Other Considerations:
 - JavaScript
