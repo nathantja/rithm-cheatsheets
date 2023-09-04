@@ -1,7 +1,5 @@
 # UNDER CONSTRUCTION
 
-## Quick references to limit context switching.
-
 Table of Contents:
 
 Drafted:
