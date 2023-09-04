@@ -1,11 +1,12 @@
 ## CRUD
+
 1. POST
 2. GET
 3. PUT/PATCH
 4. DELETE
 
-
 ## Serialization models.py Example:
+
 ```python
 class Dessert(db.Model): ...
     def serialize(self):
@@ -19,6 +20,7 @@ class Dessert(db.Model): ...
 ```
 
 ## Serialization app.py Example Singular:
+
 ```python
 @app.get("/desserts")
 def list_all_desserts():
@@ -31,6 +33,7 @@ def list_all_desserts():
 ```
 
 ## Serialization app.py Example Plural:
+
 ```python
 @app.get("/desserts/<dessert_id>")
 def list_single_dessert(dessert_id):
@@ -42,8 +45,8 @@ def list_single_dessert(dessert_id):
     return jsonify(dessert=serialized)
 ```
 
-
 ## POST (create) app.py Example:
+
 ```python
 @app.post("/desserts")
 def create_dessert():
