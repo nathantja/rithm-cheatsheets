@@ -169,6 +169,16 @@ class Employee(db.Model):   # ...
     dept = db.relationship( 'Department', backref='employees')
 ```
 
+M:M using Join Table:
+
+```python
+class Employee(db.Model):   # ...
+
+    projects = db.relationship(
+        'Project', secondary='employees_projects', backref='employees')
+
+```
+
 ## Querying:
 
 ```python

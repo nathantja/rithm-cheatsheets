@@ -9,11 +9,11 @@ Drafted:
 - Postgres
 
 Pending:
-- Flask
+- Flask/Flask Session
 - Javascript AJAX Requests
 - Python API Requests
 
-Considerations:
+Other Considerations:
 - JavaScript
 - Python
 - Object Oriented Programming
