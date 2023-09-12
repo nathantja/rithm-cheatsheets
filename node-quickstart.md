@@ -36,7 +36,7 @@ Example package.json:
 - .gitignore node_modules
 - `npm install` will read from package.json for dependencies
 
-## Process - Global Object
+## Process - is a global object
 
 ### env variables
 
