@@ -29,7 +29,6 @@ Example package.json:
 ```
 
 ### Installing Packages
-
 - `npm install <package_name>` - dependencies added to package.json, then
   installs in nodes_modules folder
 - `npm i lodash` - i also works
@@ -138,7 +137,9 @@ async function writeOutput() {
 
 ## Debugging
 
-`node --inspect-brk file.js`
+`node --inspect server.js` - server will run
+
+`node --inspect-brk file.js` - stop file immediately
 
 `chrome://inspect` in Google Chrome
 OR
