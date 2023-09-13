@@ -130,14 +130,11 @@ app.get("/whoops", function (req, res) {
 });
 ```
 
-
 ## Error Handling
 
 - Boilerplate expressError.js given to us
 - import errors on the app.js
 - `throw new NotFoundError("No such user")`
-
-
 
 - Respond with JSON based on error message
 
@@ -184,4 +181,60 @@ app.use(function (err, req, res, next) {           // global err handler
 });
 
 module.exports = app;                              // don't forget this!
+```
+
+## Middleware
+
+- next() used to go to the next thing
+- needs (req, res, next)
+
+```JavaScript
+/** Logger: prints log message and goes to next. */
+
+function logger(req, res, next) {
+  console.log(`Sending ${req.method} request to ${req.path}.`);
+  return next();
+}
+```
+
+- Can be above routes:
+- `app.use(logger);`
+
+- Can be for specific routes:
+- `app.get(path, fn-1, fn-2, ...)`
+  fn-1, fn-2, any number of middlewares
+
+Example of downloadable middleware:
+
+```JavaScript
+// morgan - logging with colors
+npm install morgan
+
+const morgan = require("morgan")
+app.use(morgan('dev'));
+```
+
+## Routers
+- can split the routes into multiple files
+
+- app.js
+
+```JavaScript
+const userRoutes = require("./userRoutes");
+
+app.use("/users", userRoutes);
+```
+
+- userRoutes.js
+
+```JavaScript
+const express = require("express");
+const router = new express.Router();
+
+router.get("/", function (req, res) {
+    // code here...
+
+})
+
+modules.exports = router;
 ```
