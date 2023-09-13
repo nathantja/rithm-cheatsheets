@@ -36,6 +36,8 @@ Example package.json:
 - .gitignore node_modules
 - `npm install` will read from package.json for dependencies
 
+- `npm list -g` - list all things globally installed
+
 ## Process - is a global object
 
 ### env variables
@@ -134,3 +136,10 @@ async function writeOutput() {
 }
 ```
 
+## Debugging
+
+`node --inspect-brk file.js`
+
+`chrome://inspect` in Google Chrome
+OR
+use the green button in dev tools

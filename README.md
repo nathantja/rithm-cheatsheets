@@ -20,6 +20,10 @@ Pending:
 - Python API Requests
 - Jasmine Testing
 
+- jQuery
+- JavaScript `this`
+- Vanilla JS DOM Manipulation
+
 Other Considerations:
 - JavaScript
 - Python
