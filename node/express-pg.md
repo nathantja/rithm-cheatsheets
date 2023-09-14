@@ -102,3 +102,50 @@ router.delete("/:id", async function (req, res, next) {
 
 - don't pollute production
 - jest sets .NODE_ENV variable to "test"
+
+## 1:M Relationship
+
+```JavaScript
+router.get("/:id",
+  async function (req, res, next) {
+    const id = req.params.id;
+    const uResults = await db.query(`
+          SELECT id, name, type
+          FROM users
+          WHERE id = $1`, [id]);
+    const user = uResults.rows[0];
+
+    const mResults = await db.query(`
+          SELECT id, msg_content
+          FROM messages
+          WHERE user_id=$1`, [id]);
+    const messages = mResults.rows;
+
+    user.messages = messages;
+    return res.json({ user });
+  });
+```
+
+## M:M Relationship
+
+```JavaScript
+router.get("/:id", async function (req, res, next) {
+  const id = req.params.id;
+  const mResults = await db.query(
+    `SELECT id, msg_content
+           FROM messages
+           WHERE id = $1`, [id]);
+  const message = mResults.rows[0];
+
+  const tResults = await db.query(
+    `SELECT tag_name
+           FROM messages_tags AS mt
+            JOIN tags AS t ON mt.tag_code = t.code
+           WHERE mt.message_id = $1
+           ORDER BY tag_name`, [id]);
+  message.tags = tResults.rows.map(r => r.tag_name);
+
+  return res.json({ message });
+});
+
+```
