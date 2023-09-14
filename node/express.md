@@ -236,5 +236,5 @@ router.get("/", function (req, res) {
 
 })
 
-modules.exports = router;
+module.exports = router;
 ```

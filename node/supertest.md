@@ -94,3 +94,12 @@ describe("DELETE /cats/:name", function() {
   });
 });
 ```
+
+# TESTING DATABASE
+- express
+- Setup, teardown for controlled data
+
+
+
+## beforeEach
+

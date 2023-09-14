@@ -8,6 +8,7 @@
 - `dropdb db_name` - delete database (not recommended)
 - `pg_dump -c db_name > file.sql` - export a database backup to a file
 - `psql -f file.sql db_name` - import data from file (database name must exist)
+- `psql -f file.sql` - if the file has CREATE DB syntax already
 - `pg_restart` - restart psql server
 
 ### PSQL Commands:
@@ -179,3 +180,6 @@ CREATE TABLE movies (
 - `NOT NULL` - if must be filled in
 - `UNIQUE` - can span multiple columns (first_name, last_name, dob)
 - `CHECK` - check a condition
+
+### Comments
+- `--` means comment
