@@ -6,6 +6,7 @@
 
 - vanilla node has to be restarted for every change
 - `nodemon app.js` will watch for changes
+- `nodemon -e js,html,css`
 
 - console.log() in node does not show up in browser dev tools
 

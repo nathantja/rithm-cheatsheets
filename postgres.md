@@ -183,3 +183,10 @@ CREATE TABLE movies (
 
 ### Comments
 - `--` means comment
+
+
+
+
+
+LIKE
+ILIKE
