@@ -2,6 +2,8 @@
 
 - `npm i --global jest` - install globally on device
 
+`jest -i --watchAll`
+
 ## Setup
 
 `NAME_OF_FILE.test.js`
@@ -139,3 +141,63 @@ For frequent setup/teardown:
 - Function coverage: has each function been executed?
 
 - 90%+ is good. 100% not always worth it
+
+
+## MOCKING
+- bring in the entire module
+- mock before you import the thing tested
+
+```js
+
+const dice = require("/.dice");
+dice.d6 = jest.fn()
+
+const { lucky7Game } = require("./casino");
+
+test("always roll 4", function () {
+  dice.d6
+      .mockReturnValue(4);
+  expect(lucky7Game()).toEqual(8);
+});
+
+test("lucky 7!", function () {
+  dice.d6
+      .mockReturnValueOnce(3)
+      .mockReturnValueOnce(4);
+  expect(lucky7Game()).toEqual(7);
+});
+
+test("make sure rolled 2d6", function () {
+  dice.d6.mockClear();
+  lucky7Game();
+  expect(dice.d6).toHaveBeenCalledTimes(2);
+});
+```
+
+### MOCK AJAX CALLS
+
+- fetch-mock
+- url must be exact same url with same http method
+
+
+```js
+const fetchMock = require("fetch-mock");
+
+const { getFact, BASE_URL } = require("./nums");
+
+test("fact about 7", async function () {
+  fetchMock.get(`${BASE_URL}/7`, {
+    body: {
+      fact: "7 is lucky"
+    },
+    status: 200
+  })
+
+  const res = await getFact(7);
+  expect(res).toEqual("7 is lucky");
+});
+```
+
+mocking out fetch - fetch mock
+
+mocking out a function - jest.fn()
